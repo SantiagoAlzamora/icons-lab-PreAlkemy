@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.alkemy.icons.error.InvalidParamException;
+import com.alkemy.icons.error.NoValidParamException;
+
 
 @RestControllerAdvice
 public class HandlerExceptionController extends ResponseEntityExceptionHandler{
 
-	@ExceptionHandler(value = {InvalidParamException.class})
+	@ExceptionHandler(value = {NoValidParamException.class})
 	protected ResponseEntity<Object> handlerInvalidParamException(Exception e, WebRequest request){
 		return handleExceptionInternal(e,e.getMessage(),new HttpHeaders(),HttpStatus.BAD_REQUEST,request);
 	}

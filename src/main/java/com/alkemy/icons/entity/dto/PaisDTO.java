@@ -7,4 +7,17 @@ import lombok.Setter;
 @Setter
 public class PaisDTO {
 
+	private Long id;
+	
+	private String imagen;
+	
+	private String denominacion;
+	
+	private Long cantidadHabitantes;
+	
+	private Long superficie; //m2
+	
+	
+	private IconDTO icon;
+	
 }
